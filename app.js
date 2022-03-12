@@ -16,6 +16,8 @@ const game = () => {
             introScreen.classList.add("fadeOut")
             match.classList.add("fadeIn")
         })
+
+        
     }
 
     const playMatch = () =>  {
@@ -52,6 +54,8 @@ const game = () => {
 
 
 
+
+
                 
 
 
@@ -61,13 +65,36 @@ const game = () => {
         })
     }
 
-    const updateScore = () => {
+    
+    const updateScore = (winner) => {
         const playerScore = document.querySelector(".player-score p")
         const computerScore = document.querySelector(".computer-score p")
+        
+        
+        
+        
 
-        playerScore.textContent = pScore
+        playerScore.textContent =  pScore
         computerScore.textContent = cScore
 
+        
+
+        if(playerScore.textContent === '5'){
+            
+            winner.textContent = "You won this round !"
+        }
+        
+        else if(computerScore.textContent === "5"){
+            
+            winner.textContent = "Computer won this round !"
+        }
+
+
+        
+
+        
+        
+
 
 
         
@@ -76,30 +103,6 @@ const game = () => {
         
     }
 
-    const checkScore = (playerScore, computerScore) => {
-        const introScreen = document.querySelector(".intro")
-        const match = document.querySelector(".match")
-        const textIntro = document.querySelector(".intro h1")
-
-        if(playerScore === '10'){
-            match.classList.add("fadeOut")
-            introScreen.classList.add("fadeIn")
-
-            textIntro.textContent = "You won the round !"
-
-
-        }
-
-        else if(computerScore === '10'){
-            match.classList.add("fadeOut")
-            introScreen.classList.add("fadeIn")
-
-            textIntro.textContent = "Computer won the round !"
-
-
-        }
-
-    }
     
 
     const compareHands = (playerChoice, computerChoice) => {
@@ -117,7 +120,7 @@ const game = () => {
             if(computerChoice === 'Scissors'){
                 winner.textContent = "Player wins !"
                 pScore ++
-                updateScore()
+                updateScore(winner)
                 return
                 
                 
@@ -126,7 +129,7 @@ const game = () => {
             else {
                 winner.textContent = "Computer wins !"
                 cScore ++
-                updateScore()
+                updateScore(winner)
                 return
                 
                 
@@ -138,7 +141,7 @@ const game = () => {
             if(computerChoice === 'Rock'){
                 winner.textContent = "Player wins !"
                 pScore ++
-                updateScore()
+                updateScore(winner)
                 return
                 
                 
@@ -147,7 +150,7 @@ const game = () => {
             else {
                 winner.textContent = "Computer wins !"
                 cScore ++
-                updateScore()
+                updateScore(winner)
                 return
                 
                 
@@ -159,7 +162,7 @@ const game = () => {
             if(computerChoice === 'Rock'){
                 winner.textContent = "Computer wins !"
                 cScore ++        
-                updateScore()        
+                updateScore(winner)        
                 return
                 
                 
@@ -168,7 +171,7 @@ const game = () => {
             else {
                 winner.textContent = "Player wins !"
                 pScore ++        
-                updateScore()       
+                updateScore(winner)       
                 return
                 
                 

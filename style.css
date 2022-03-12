@@ -38,13 +38,10 @@ html {
 
 .intro h1 {
   font-size: 5rem;
-  
 }
 
-
-
 .play-btn {
-  background-color:rgb(0, 255, 76) ;
+  background-color: rgb(0, 255, 76);
   padding: 1rem 4em;
   margin-top: 2rem;
   border-radius: 2rem;
@@ -59,10 +56,7 @@ html {
 
 .play-btn:hover {
   transform: scale(1.1);
-
-
 }
-
 
 .match {
   position: absolute;
@@ -72,7 +66,6 @@ html {
   flex-direction: column;
   justify-content: space-between;
   transition: 0.5s ease 0.5s;
-
 }
 
 .winner {
@@ -95,7 +88,6 @@ html {
 
 .computer-hand {
   width: 25%;
-  
 }
 
 .options {
@@ -129,12 +121,10 @@ html {
   pointer-events: none;
 }
 
-
 .fadeIn {
   opacity: 1;
   pointer-events: all;
 }
-
 
 @keyframes shakePlayer {
   0% {
@@ -173,7 +163,7 @@ html {
 
 @keyframes shakeComputer {
   0% {
-    transform:  translateY(0px);
+    transform: translateY(0px);
   }
 
   15% {
@@ -190,11 +180,11 @@ html {
     transform: translateY(0px);
   }
   65% {
-    transform:  translateY(-50px);
+    transform: translateY(-50px);
   }
 
   75% {
-    transform:  translateY(0px);
+    transform: translateY(0px);
   }
 
   85% {
@@ -204,7 +194,63 @@ html {
   100% {
     transform: translateY(0px);
   }
-
 }
 
+@media (max-width: 1000px) {
+  .intro h1 {
+    font-size: 3.2rem;
+  }
 
+  .play-btn {
+    padding: 1rem 3.5rem;
+  }
+
+  .winner {
+    font-size: 3rem;
+  }
+
+  .player-hand {
+    width: 20%;
+  }
+  .computer-hand {
+    width: 20%;
+  }
+
+  .options a {
+    padding: 0.5rem 2.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .score h2 {
+    font-size: 1.5rem;
+  }
+
+  .score p {
+    font-size: 1.5rem;
+  }
+
+  .intro h1 {
+    font-size: 2rem;
+  }
+
+  .play-btn {
+    padding: 1rem 2rem;
+  }
+
+  .winner {
+    font-size: 2.5rem;
+  }
+
+  .player-hand {
+    width: 18%;
+  }
+
+  .computer-hand {
+    width: 18%;
+  }
+
+  .options a {
+    padding: 0.2rem 1rem;
+  }
+}
